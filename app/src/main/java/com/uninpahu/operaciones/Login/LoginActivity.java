@@ -1,4 +1,4 @@
-package com.digitalandroidweb.androidregisterandlogin;
+package com.uninpahu.operaciones.Login;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +17,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.digitalandroidweb.operaciones.R;
+import com.uninpahu.operaciones.PrincipalActivity;
+import com.uninpahu.operaciones.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,9 +46,9 @@ public class LoginActivity extends AppCompatActivity {
 
         loading = findViewById(R.id.loading);
         email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+       // password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
-        link_regist = findViewById(R.id.link_regist);
+       // link_regist = findViewById(R.id.link_regist);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 String mEmail = email.getText().toString().trim();
                 String mPass = password.getText().toString().trim();
 
-                if (!mEmail.isEmpty() || !mPass.isEmpty()) {
+                if (!mEmail.isEmpty()){ //|| !mPass.isEmpty()) {
                     Login(mEmail, mPass);
                 } else {
                     email.setError("Please insert email");

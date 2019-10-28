@@ -1,4 +1,4 @@
-package com.digitalandroidweb.androidregisterandlogin;
+package com.uninpahu.operaciones;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.digitalandroidweb.operaciones.R;
 
 public class Promociones extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
     View myView;

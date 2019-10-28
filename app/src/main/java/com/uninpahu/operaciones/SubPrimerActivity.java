@@ -1,10 +1,12 @@
-package com.digitalandroidweb.androidregisterandlogin;
+package com.uninpahu.operaciones;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.digitalandroidweb.operaciones.R;
 
 public class SubPrimerActivity extends AppCompatActivity {
 

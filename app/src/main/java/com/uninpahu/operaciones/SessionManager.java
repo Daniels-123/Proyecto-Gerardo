@@ -1,8 +1,10 @@
-package com.digitalandroidweb.androidregisterandlogin;
+package com.uninpahu.operaciones;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import com.uninpahu.operaciones.Login.LoginActivity;
 
 import java.util.HashMap;
 
