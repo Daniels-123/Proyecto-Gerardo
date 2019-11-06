@@ -9,7 +9,7 @@ import com.digitalandroidweb.operaciones.R;
 import com.geniusforapp.fancydialog.FancyAlertDialog;
 
 /**
- * Created by Daniel Buitrago on 24/09/2019.
+ * Created by Android Digital Services on 24/09/2019.
  */
 
 public class CheckInternetConnection {

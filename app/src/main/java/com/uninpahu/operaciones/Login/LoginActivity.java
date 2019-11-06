@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.digitalandroidweb.operaciones.R;
+import com.uninpahu.operaciones.Conexion.CheckInternetConnection;
 import com.uninpahu.operaciones.PrincipalActivity;
 import com.uninpahu.operaciones.SessionManager;
 
@@ -34,8 +35,12 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
     private TextView link_regist;
     private ProgressBar loading;
+
+    /**cambiar link de url login por el del hosting **/
+
     private static String URL_LOGIN = "http://192.168.1.18:8080/Androidlogin/login.php";
     SessionManager sessionManager;
+   // CheckInternetConnection checkInternetConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,24 +48,24 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         sessionManager = new SessionManager(this);
-
+        new CheckInternetConnection(this).checkConnection();
         loading = findViewById(R.id.loading);
         email = findViewById(R.id.email);
        // password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
-       // link_regist = findViewById(R.id.link_regist);
+       link_regist = findViewById(R.id.link_regist);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String mEmail = email.getText().toString().trim();
-                String mPass = password.getText().toString().trim();
+              //  String mPass = password.getText().toString().trim();
 
                 if (!mEmail.isEmpty()){ //|| !mPass.isEmpty()) {
-                    Login(mEmail, mPass);
+                    Login(mEmail);//;, mPass);
                 } else {
-                    email.setError("Please insert email");
-                    password.setError("Please insert password");
+                    email.setError("Por favor ingrese un dato que no se encuentre vacio");
+                 //   password.setError("Please insert password");
                 }
             }
         });
@@ -74,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void Login(final String email, final String password) {
+    private void Login(final String email){//, final String password) {
 
         loading.setVisibility(View.VISIBLE);
         btn_login.setVisibility(View.GONE);
@@ -94,14 +99,14 @@ public class LoginActivity extends AppCompatActivity {
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-                                    String name = object.getString("name").trim();
+                                    //String name = object.getString("name").trim();
                                     String email = object.getString("email").trim();
-                                    String id = object.getString("id").trim();
+                                    //String id = object.getString("id").trim();
 
-                                    sessionManager.createSession(name, email, id);
+                                    sessionManager.createSession(email);//name, email, id);
 
                                     Intent intent = new Intent(LoginActivity.this, PrincipalActivity.class);
-                                    intent.putExtra("name", name);
+                                //    intent.putExtra("name", name);
                                     intent.putExtra("email", email);
                                     startActivity(intent);
                                     finish();
@@ -134,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("email", email);
-                params.put("password", password);
+           //     params.put("password", password);
                 return params;
             }
         };
@@ -142,5 +147,11 @@ public class LoginActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
+    }
+
+    @Override
+    protected void onResume() {
+        new CheckInternetConnection(this).checkConnection();
+        super.onResume();
     }
 }

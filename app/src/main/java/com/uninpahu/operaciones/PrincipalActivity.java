@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.digitalandroidweb.operaciones.R;
+import com.uninpahu.operaciones.Conexion.CheckInternetConnection;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,7 +27,7 @@ public class PrincipalActivity extends AppCompatActivity
 
         sessionManager = new SessionManager(this);
         sessionManager.checkLogin();
-
+        new CheckInternetConnection(this).checkConnection();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -59,7 +60,7 @@ public class PrincipalActivity extends AppCompatActivity
 
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame
-                        , new Promociones())
+                        , new PrimerFragmento())
                 .commit();
     }
 
@@ -104,7 +105,7 @@ public class PrincipalActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
-                            , new Promociones())
+                            , new PrimerFragmento())
                     .commit();
 
 
@@ -124,5 +125,12 @@ public class PrincipalActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    @Override
+    protected void onResume() {
+        new CheckInternetConnection(this).checkConnection();
+        super.onResume();
     }
 }

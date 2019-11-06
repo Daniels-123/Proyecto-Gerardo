@@ -14,7 +14,7 @@ import android.widget.Button;
 
 import com.digitalandroidweb.operaciones.R;
 
-public class Promociones extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
+public class PrimerFragmento extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
     View myView;
 
     @Nullable

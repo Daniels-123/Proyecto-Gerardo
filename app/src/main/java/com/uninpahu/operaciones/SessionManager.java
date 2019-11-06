@@ -27,12 +27,12 @@ public class SessionManager {
         editor = sharedPreferences.edit();
     }
 
-    public void createSession(String name, String email, String id){
+    public void createSession(String email){//name, String email, String id){
 
         editor.putBoolean(LOGIN, true);
-        editor.putString(NAME, name);
+       // editor.putString(NAME, name);
         editor.putString(EMAIL, email);
-        editor.putString(ID, id);
+        //editor.putString(ID, id);
         editor.apply();
 
     }

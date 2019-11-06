@@ -4,15 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorAccent"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
     android:paddingTop="80dp"
+
+    android:gravity="center"
     tools:context="com.uninpahu.operaciones.Login.LoginActivity">
 
-    <ImageView
+    <TextView
         android:id="@+id/logo"
-        android:src="@drawable/logo"
+        android:text="Fondo de empleados"
+        android:textSize="35sp"
         android:layout_marginBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
@@ -24,14 +27,14 @@
         android:layout_below="@id/logo">
         <EditText
             android:inputType="textEmailAddress"
-            android:hint="Email"
+            android:hint="Cedula"
             android:textColor="@color/colorText"
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <!--android.support.design.widget.TextInputLayout
         android:id="@+id/layoutpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,22 +47,22 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
+    </android.support.design.widget.TextInputLayout-->
 
     <ProgressBar
         android:id="@+id/loading"
         android:layout_marginTop="35dp"
-        android:layout_below="@id/layoutpassword"
+        android:layout_below="@id/layoutemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_below="@id/layoutpassword"
+        android:layout_below="@id/layoutemail"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/colorPrimary2"
-        android:text="LOGIN"
+        android:text="INICIAR SESIÓN"
         android:textColor="@color/colorText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -68,8 +71,8 @@
         android:id="@+id/link_regist"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:textColor="@color/colorAccent"
-        android:text="Register"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="No se ha registardo? Inicie aquí"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
