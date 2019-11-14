@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.uninpahu.operaciones.Login.HomeActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </ScrollView>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="120dp"
@@ -24,6 +30,12 @@
         android:layout_centerHorizontal="true"
         android:text="Edit Photo" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </ScrollView>
+
     <LinearLayout
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -33,6 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+
+
 
         <ImageView
             android:src="@drawable/ic_name"
@@ -62,13 +77,13 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:src="@drawable/ic_email"
+            android:src="@drawable/ic_name"
             android:layout_weight="1"
             android:layout_width="70dp"
             android:layout_height="50dp" />
 
         <EditText
-            android:id="@+id/email_"
+            android:id="@+id/apellido"
             android:hint="Apellido"
             android:inputType="textPersonName"
             android:layout_marginLeft="10dp"
@@ -89,7 +104,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:src="@drawable/ic_email"
+            android:src="@drawable/birthday"
             android:layout_weight="1"
             android:layout_width="70dp"
             android:layout_height="50dp" />
@@ -137,8 +152,8 @@
     <LinearLayout
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:id="@+id/layout_cedula"
-        android:layout_below="@id/layout_text_segundo"
+        android:id="@+id/layout_nivel_academico"
+        android:layout_below="@id/layout_cedula"
         android:weightSum="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -151,8 +166,8 @@
             android:layout_height="50dp" />
 
         <EditText
-            android:id="@+id/numerocedula"
-            android:hint="Cedula"
+            android:id="@+id/nivel_academico"
+            android:hint="Nivel Académico"
             android:inputType="textPersonName"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
@@ -160,6 +175,94 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/layout_direccion"
+        android:layout_below="@id/layout_nivel_academico"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/ic_email"
+            android:layout_weight="1"
+            android:layout_width="70dp"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/direccion"
+            android:hint="Dirección"
+            android:inputType="textPersonName"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/layout_estrato"
+        android:layout_below="@id/layout_direccion"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/ic_email"
+            android:layout_weight="1"
+            android:layout_width="70dp"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/estrato"
+            android:hint="Estrato"
+            android:inputType="textPersonName"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/layout_barrio"
+        android:layout_below="@id/layout_estrato"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/ic_email"
+            android:layout_weight="1"
+            android:layout_width="70dp"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/barrio"
+            android:hint="Estrato"
+            android:inputType="textPersonName"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/layout_estrato"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:layout_alignParentBottom="true"
