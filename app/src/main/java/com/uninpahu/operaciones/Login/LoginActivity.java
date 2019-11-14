@@ -36,9 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView link_regist;
     private ProgressBar loading;
 
-    /**cambiar link de url login por el del hosting **/
-
-    private static String URL_LOGIN = "http://192.168.1.18:8080/Androidlogin/login.php";
+    private static String URL_LOGIN = "http://digitalandroidservices.com/api/login.php";
     SessionManager sessionManager;
    // CheckInternetConnection checkInternetConnection;
 
