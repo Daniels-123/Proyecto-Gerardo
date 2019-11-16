@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText name, email, password, c_password;
     private Button btn_regist;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://digitalandroidservices.com/api/register.php";
+    private static String URL_REGIST = "http://digitalandroidservices.com/fondo/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                         if (success.equals("1")) {
                             Toast.makeText(RegisterActivity.this, "El registro tuvo exito", Toast.LENGTH_SHORT).show();
+                            finish();
+                            Toast.makeText(RegisterActivity.this, "Por favor inicia sesión", Toast.LENGTH_SHORT).show();
                         }
 
 

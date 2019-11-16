@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Android Register And Login</string>
-    <string name="title_activity_principal">Android Register And Login</string>
+    <string name="app_name">Fondo empleados colpatria</string>
+    <string name="title_activity_principal">Fondo empleados colpatria</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Usuario</string>
+    <string name="nav_header_subtitle">usuario@correo.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 </resources>

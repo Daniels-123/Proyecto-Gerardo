@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.digitalandroidweb.operaciones.R;
+import com.uninpahu.operaciones.Login.HomeActivity;
 
 public class PrimerFragmento extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
     View myView;
@@ -21,14 +22,14 @@ public class PrimerFragmento extends Fragment implements NavigationView.OnNaviga
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.primer_fragment, container, false);
-        Button btn = (Button) myView.findViewById(R.id.restaurantes);
-        Button inv = (Button) myView.findViewById(R.id.invi);
-        inv.setClickable(false);
+        Button btn = (Button) myView.findViewById(R.id.primer_boton);
+        //Button inv = (Button) myView.findViewById(R.id.invi);
+       // inv.setClickable(false);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getActivity(), SubPrimerActivity.class);
+                Intent i = new Intent(getActivity(), HomeActivity.class);
                 startActivity(i);
             }
         });

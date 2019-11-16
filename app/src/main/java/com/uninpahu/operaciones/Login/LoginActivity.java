@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView link_regist;
     private ProgressBar loading;
 
-    private static String URL_LOGIN = "http://digitalandroidservices.com/api/login.php";
+    private static String URL_LOGIN = "http://digitalandroidservices.com/fondo/loginfinal.php";
     SessionManager sessionManager;
    // CheckInternetConnection checkInternetConnection;
 
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         new CheckInternetConnection(this).checkConnection();
         loading = findViewById(R.id.loading);
         email = findViewById(R.id.email);
-       // password = findViewById(R.id.password);
+        password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
        link_regist = findViewById(R.id.link_regist);
 
@@ -57,13 +57,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String mEmail = email.getText().toString().trim();
-              //  String mPass = password.getText().toString().trim();
+                String mPass = password.getText().toString().trim();
 
-                if (!mEmail.isEmpty()){ //|| !mPass.isEmpty()) {
-                    Login(mEmail);//;, mPass);
+                if (!mEmail.isEmpty()|| !mPass.isEmpty()) {
+                    Login(mEmail, mPass);
                 } else {
                     email.setError("Por favor ingrese un dato que no se encuentre vacio");
-                 //   password.setError("Please insert password");
+                    password.setError("Please insert password");
                 }
             }
         });
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void Login(final String email){//, final String password) {
+    private void Login(final String email, final String password) {
 
         loading.setVisibility(View.VISIBLE);
         btn_login.setVisibility(View.GONE);
@@ -98,10 +98,10 @@ public class LoginActivity extends AppCompatActivity {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
                                     //String name = object.getString("name").trim();
-                                    String email = object.getString("email").trim();
-                                    //String id = object.getString("id").trim();
+                                    String email = object.getString("cedula").trim();
+                                   // String id = object.getString("id").trim();
 
-                                    sessionManager.createSession(email);//name, email, id);
+                                    sessionManager.createSession(email);//, id);//name, email, id);
 
                                     Intent intent = new Intent(LoginActivity.this, PrincipalActivity.class);
                                 //    intent.putExtra("name", name);
@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("email", email);
-           //     params.put("password", password);
+                params.put("password", password);
                 return params;
             }
         };
